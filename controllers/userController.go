@@ -1,4 +1,4 @@
-package usercontrollers
+package controllers
 
 import (
 	"context"
@@ -9,7 +9,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/umerwaheed/backend_golang/database"
-	usermodel "github.com/umerwaheed/backend_golang/models"
+	models "github.com/umerwaheed/backend_golang/models"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -38,7 +38,7 @@ func GetById(w http.ResponseWriter, r *http.Request) {
 	filter := bson.M{"_id": id}
 
 	//fetch from mongodb
-	var user usermodel.User
+	var user models.User
 
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
