@@ -55,8 +55,6 @@ func GetById(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	user.Password = ""
-
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(user)
 }
