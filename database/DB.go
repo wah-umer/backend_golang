@@ -14,7 +14,7 @@ import (
 
 var (
 	Client *mongo.Client
-	DB     *mongo.Database
+	db     *mongo.Database
 )
 
 func init() {
@@ -36,12 +36,16 @@ func init() {
 		log.Fatal(err)
 	}
 
+	if err := cli.Ping(cont, nil); err != nil {
+		log.Fatalf("Mongo ping error: %v", err)
+	}
+
 	Client = cli
-	DB = cli.Database(dbName)
+	db = cli.Database(dbName)
 
 	fmt.Printf("Connected to MongoDB database %q\n", dbName)
 }
 
 func Collection(name string) *mongo.Collection {
-	return DB.Collection(name)
+	return db.Collection(name)
 }
