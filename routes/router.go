@@ -17,5 +17,9 @@ func Router() *mux.Router {
 	router.HandleFunc("/address/{id}", controllers.UpdateById).Methods("PATCH")
 	router.HandleFunc("/address/{id}", controllers.DeleteById).Methods("DELETE")
 
+	//brand & category routes
+	router.HandleFunc("/brands", controllers.GetAllBrand).Methods("GET")
+	router.HandleFunc("/categories", controllers.GetAllCategory).Methods("GET")
+
 	return router
 }
