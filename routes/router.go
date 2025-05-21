@@ -36,5 +36,9 @@ func Router() *mux.Router {
 	router.HandleFunc("/reviews/{id}", controllers.UpdateReviewById).Methods("PATCH")
 	router.HandleFunc("/reviews/{id}", controllers.DeleteReviewById).Methods("DELETE")
 
+	// order route
+	router.HandleFunc("/orders", controllers.CreateOrder).Methods("POST")
+	router.HandleFunc("/orders/user/{id}", controllers.GetOrdersByUserId).Methods("GET")
+
 	return router
 }
