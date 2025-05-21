@@ -40,5 +40,12 @@ func Router() *mux.Router {
 	router.HandleFunc("/orders", controllers.CreateOrder).Methods("POST")
 	router.HandleFunc("/orders/user/{id}", controllers.GetOrdersByUserId).Methods("GET")
 
+	// cart route
+	router.HandleFunc("/cart", controllers.CreateCartItem).Methods("POST")
+	router.HandleFunc("/cart/user/{id}", controllers.GetCartByUserId).Methods("GET")
+	router.HandleFunc("/cart/user/{id}", controllers.ClearCartByUserId).Methods("DELETE")
+	router.HandleFunc("/cart/{id}", controllers.UpdateCartItem).Methods("PATCH")
+	router.HandleFunc("/cart/{id}", controllers.DeleteCartItem).Methods("DELETE")
+
 	return router
 }
