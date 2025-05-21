@@ -85,7 +85,7 @@ func GetWishlistByUserId(w http.ResponseWriter, r *http.Request) {
 
 func UpdateWishlistById(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Access-Control-Allow-Methods", "GET")
+	w.Header().Set("Access-Control-Allow-Methods", "POST")
 
 	params := mux.Vars(r)
 	wishId := params["id"]
@@ -144,7 +144,7 @@ func UpdateWishlistById(w http.ResponseWriter, r *http.Request) {
 
 func DeleteWishlistById(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Access-Control-Allow-Methods", "GET")
+	w.Header().Set("Access-Control-Allow-Methods", "DELETE")
 
 	params := mux.Vars(r)
 	wishId := params["id"]

@@ -30,5 +30,11 @@ func Router() *mux.Router {
 	router.HandleFunc("/wishlist/user/{id}", controllers.GetWishlistByUserId).Methods("GET")
 	router.HandleFunc("/wishlist/{id}", controllers.DeleteWishlistById).Methods("DELETE")
 
+	// review route
+	router.HandleFunc("/reviews", controllers.CreateReview).Methods("POST")
+	router.HandleFunc("/reviews/product/{id}", controllers.GetReviewByProductId).Methods("GET")
+	router.HandleFunc("/reviews/{id}", controllers.UpdateReviewById).Methods("PATCH")
+	router.HandleFunc("/reviews/{id}", controllers.DeleteReviewById).Methods("DELETE")
+
 	return router
 }
