@@ -21,5 +21,9 @@ func Router() *mux.Router {
 	router.HandleFunc("/brands", controllers.GetAllBrand).Methods("GET")
 	router.HandleFunc("/categories", controllers.GetAllCategory).Methods("GET")
 
+	// products routes
+	router.HandleFunc("/products", controllers.GetAllProducts).Methods("GET")
+	router.HandleFunc("/products/{id}", controllers.GetProductById).Methods("GET")
+
 	return router
 }
