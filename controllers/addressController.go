@@ -9,7 +9,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/umerwaheed/backend_golang/database"
-	models "github.com/umerwaheed/backend_golang/models"
+	"github.com/umerwaheed/backend_golang/models"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
